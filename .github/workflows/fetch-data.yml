@@ -24,12 +24,11 @@ jobs:
       - name: Test with pytest
         run: |
           quant-cli -t "BTC-USD,ETH-USD"
-          git add .
           
       - name: Push to data branch
         uses: Automattic/action-commit-to-branch@master
         with:
-          branch: 'data'
+          branch: 'download'
           commit_message: 'Automatic push after data fetch'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
